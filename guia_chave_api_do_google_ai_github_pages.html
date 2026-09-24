@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia Rápido: API do Google AI</title>
+    <style>
+        :root {
+            --bg-color: #0d0e11;
+            --card-bg: #16171d;
+            --accent-purple: #c084fc;
+            --purple-bg: #1e142e;
+            --purple-border: #4c1d95;
+            --text-primary: #f3f4f6;
+            --text-secondary: #9ca3af;
+            --link-color: #38bdf8;
+            --step-number-bg: #27272a;
+            --line-color: #27272a;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.6;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 760px;
+            width: 100%;
+        }
+
+        h1.main-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 12px;
+            color: #ffffff;
+        }
+
+        p.intro {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            margin-bottom: 24px;
+        }
+
+        .callout {
+            background-color: var(--purple-bg);
+            border: 1px solid var(--purple-border);
+            border-radius: 8px;
+            padding: 16px 20px;
+            margin-bottom: 32px;
+        }
+
+        .callout-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 600;
+            color: var(--accent-purple);
+            margin-bottom: 6px;
+        }
+
+        .callout-body {
+            font-size: 0.95rem;
+            color: #e9d5ff;
+        }
+
+        .steps-wrapper {
+            position: relative;
+            padding-left: 44px;
+        }
+
+        .step-item {
+            position: relative;
+            margin-bottom: 32px;
+        }
+
+        /* Line connecting steps */
+        .step-item::before {
+            content: '';
+            position: absolute;
+            left: -30px;
+            top: 28px;
+            bottom: -36px;
+            width: 2px;
+            background-color: var(--line-color);
+        }
+
+        .step-item:last-child::before {
+            display: none;
+        }
+
+        .step-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+
+        .step-number {
+            position: absolute;
+            left: -44px;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: var(--step-number-bg);
+            color: var(--text-secondary);
+            font-weight: 600;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .step-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #ffffff;
+        }
+
+        .step-content {
+            font-size: 0.98rem;
+            color: #d1d5db;
+        }
+
+        .step-content p {
+            margin-bottom: 10px;
+        }
+
+        .step-content ol {
+            margin: 10px 0 12px 20px;
+        }
+
+        .step-content li {
+            margin-bottom: 8px;
+        }
+
+        a {
+            color: var(--link-color);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .success-box {
+            background-color: rgba(16, 185, 129, 0.08);
+            border: 1px solid rgba(16, 185, 129, 0.25);
+            border-radius: 8px;
+            padding: 18px 20px;
+            margin-top: 16px;
+        }
+
+        .success-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #34d399;
+            margin-bottom: 6px;
+        }
+
+        .success-body {
+            color: #a7f3d0;
+            font-size: 0.95rem;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 24px 16px;
+            }
+            .steps-wrapper {
+                padding-left: 36px;
+            }
+            .step-number {
+                left: -36px;
+                width: 26px;
+                height: 26px;
+                font-size: 0.85rem;
+            }
+            .step-item::before {
+                left: -24px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1 class="main-title">Chave da API do Google AI</h1>
+        <p class="intro">
+            Siga este guia rápido para gerar uma chave de API no Google AI Studio.
+        </p>
+
+        <div class="callout">
+            <div class="callout-header">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                <span>Acesso Rápido</span>
+            </div>
+            <div class="callout-body">
+                Certifique-se de estar conectado com uma conta Google ativa para acessar a plataforma do Google AI Studio.
+            </div>
+        </div>
+
+        <div class="steps-wrapper">
+
+            <!-- Step 1 -->
+            <div class="step-item">
+                <div class="step-header">
+                    <div class="step-number">1</div>
+                    <h2 class="step-title">Acessar a Plataforma</h2>
+                </div>
+                <div class="step-content">
+                    <p>
+                        Clique <a href="https://aistudio.google.com/apps" target="_blank">aqui ↗</a> e faça o login com sua conta Google (ou qualquer outra conta que estiver disponível).
+                    </p>
+                </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="step-item">
+                <div class="step-header">
+                    <div class="step-number">2</div>
+                    <h2 class="step-title">Navegar até as Chaves de API</h2>
+                </div>
+                <div class="step-content">
+                    <p>
+                        No canto inferior direito, você verá um <strong>ícone de chave</strong>. Clique nele para abrir o painel de gerenciamento.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="step-item">
+                <div class="step-header">
+                    <div class="step-number">3</div>
+                    <h2 class="step-title">Criar a Chave de API</h2>
+                </div>
+                <div class="step-content">
+                    <ol>
+                        <li>Ao carregar a página, clique no botão <strong>"Criar chave de API"</strong>.</li>
+                        <li>Insira qualquer nome para este novo projeto e clique em <strong>"Criar projeto"</strong>.</li>
+                        <li>Dê um nome à chave e, em seguida, clique em <strong>"Criar chave"</strong>. Pronto!</li>
+                    </ol>
+
+                    <div class="success-box">
+                        <div class="success-title">Parabéns! 🎉</div>
+                        <div class="success-body">
+                            Sua chave de API do Google AI foi criada com sucesso!<br><br>
+                            <strong>Agora é só copiar a chave e ser feliz.</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>
